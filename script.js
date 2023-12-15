@@ -36,7 +36,7 @@ function setAudioProgress() {
     audio.currentTime = (this.value * audio.duration) / 100;
 }
 
-progress.addEventListener('input', setAudioProgress);
+progress.addEventListener('change', setAudioProgress);
 
 
 // /////////////////////////////////////////////////////////
@@ -117,6 +117,7 @@ function prev(){
         songIndex = songs.length - 1
     }
     progress.value = 0
+    audio.currentTime = 0
     songInfo();
     toggleAudioStatus();
 }
